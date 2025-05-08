@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matajiri</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="images/two_blow_arrow_favicon.ico" type="image/x-icon">
+    <meta name="google-site-verification" content="wbPfIZNWohkGlL2u7Q0cmYbqvf6i6_OR5iT951g9vEw" />
+    <style>
+        /* Minimal extra styles for new layout */
+        .hero-centered {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            background: linear-gradient(135deg, #eafaf1 60%, #219150 100%);
+            border-radius: 0 0 24px 24px;
+            padding: 60px 10px 40px 10px;
+        }
+        .hero-centered h1 {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .hero-centered p {
+            font-size: 1.2rem;
+            color: #219150;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .hero-centered .btn {
+            font-size: 1.1rem;
+            padding: 14px 36px;
+        }
+        .about-modern {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 48px 0 24px 0;
+            background: #fff;
+            border-radius: 24px;
+            margin: 32px 0;
+        }
+        .about-modern h2 {
+            color: #219150;
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .about-modern p {
+            color: #1b3a2b;
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+            max-width: 520px;
+            text-align: center;
+        }
+        .about-blocks {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .about-block {
+            background: #eafaf1;
+            border-radius: 14px;
+            padding: 22px 28px;
+            min-width: 140px;
+            text-align: center;
+            margin: 8px 0;
+            color: #219150;
+            font-weight: 500;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(34,139,34,0.06);
+        }
+        .apps-showcase {
+            padding: 32px 0 24px 0;
+        }
+        .apps-showcase h2 {
+            text-align: center;
+            color: #219150;
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+        .app-grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .app-card-modern {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(34,139,34,0.07);
+            padding: 28px 18px 22px 18px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .app-card-modern .app-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            color: #219150;
+        }
+        .app-card-modern h3 {
+            font-size: 1.15rem;
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .app-card-modern p {
+            color: #4b6b4b;
+            font-size: 0.97rem;
+            margin-bottom: 0;
+        }
+        .privacy-simple {
+            background: #eafaf1;
+            border-radius: 14px;
+            margin: 36px auto 0 auto;
+            max-width: 600px;
+            padding: 18px 18px;
+            text-align: center;
+            color: #1b3a2b;
+            font-size: 1.05rem;
+        }
+        .footer-modern {
+            background: #2e7d32;
+            color: #fff;
+            padding: 36px 0 18px 0;
+            border-radius: 18px 18px 0 0;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+        .newsletter-modern {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .newsletter-modern input[type="email"] {
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            width: 220px;
+            max-width: 90vw;
+        }
+        .newsletter-modern button {
+            padding: 10px 22px;
+            background: #219150;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .footer-links-modern {
+            margin-bottom: 10px;
+        }
+        .footer-links-modern a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 6px;
+            padding: 4px 8px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .footer-links-modern a:hover {
+            background: #eafaf1;
+            color: #219150;
+        }
+        @media (max-width: 700px) {
+            .about-blocks {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .app-grid-modern {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container" style="display:flex;justify-content:center;align-items:center;padding:18px 0 0 0;">
+            <div class="logo">
+                <span style="font-size:2rem;font-weight:700;color:#219150;letter-spacing:2px;font-family:'Roboto',sans-serif;">Matajiri</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-centered">
+            <h1>Empowering Your Mobile Experience</h1>
+            <p>We build intuitive, beautiful, and privacy-first mobile apps to help you live, work, and play smarter.</p>
+            <a href="#apps" class="btn">Explore Our Apps</a>
+        </section>
+
+        <section class="about-modern" id="about">
+            <h2>Our Mission</h2>
+            <p>Matajiri is dedicated to creating mobile apps that make everyday life easier, healthier, and more productive. We believe in simplicity, privacy, and real-world impact.</p>
+            <div class="about-blocks">
+                <div class="about-block">🚀 Fast & Reliable</div>
+                <div class="about-block">🔒 Privacy-First</div>
+                <div class="about-block">🎨 Modern Design</div>
+                <div class="about-block">🌱 Real Value</div>
+            </div>
+        </section>
+
+        <section class="apps-showcase" id="apps">
+            <h2>Our Apps</h2>
+            <div class="app-grid-modern">
+                <div class="app-card-modern">
+                    <div class="app-icon">🛡️</div>
+                    <h3>NoFap Tracker</h3>
+                    <p>Stay motivated and track your progress with our simple, effective habit tracker.</p>
+                </div>
+                <div class="app-card-modern">
+                    <div class="app-icon">💇‍♂️</div>
+                    <h3>Hair Health Coach</h3>
+                    <p>Personalized tips and routines to help you achieve your best hair health.</p>
+                </div>
+                <div class="app-card-modern">
+                    <div class="app-icon">🦾</div>
+                    <h3>Stretch & Mobility</h3>
+                    <p>Guided routines to improve flexibility, reduce pain, and boost your wellbeing.</p>
+                </div>
+                <div class="app-card-modern">
+                    <div class="app-icon">⏰</div>
+                    <h3>Focus Timer</h3>
+                    <p>Boost productivity with a distraction-free timer and task manager.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="privacy-simple">
+            <strong>Privacy Notice:</strong> Matajiri apps are designed to respect your privacy. We never collect personal data without your consent.
+            <br>
+            <a href="privacy-policy.html" style="color:#219150;text-decoration:underline;">Read our full privacy policy</a>
+        </div>
+    </main>
+
+    <footer class="footer-modern">
+        <div class="container footer-content">
+            <div class="footer-links-modern">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="eula.html">EULA</a>
+            </div>
+            <form class="newsletter-modern" onsubmit="return false;">
+                <label for="newsletter-email" style="color:#fff;font-weight:500;">Stay Updated</label>
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p style="margin:8px 0 0 0;">&copy; 2025 Matajiri. All rights reserved.</p>
+            <p style="margin:0;">Made with <span style="color:#eafaf1;">&#10084;</span> for mobile users</p>
+        </div>
+    </footer>
+</body>
+</html>
